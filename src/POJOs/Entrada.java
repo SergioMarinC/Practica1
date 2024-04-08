@@ -1,6 +1,6 @@
-package Modelo;
+package POJOs;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Entrada {
 
@@ -8,16 +8,16 @@ public class Entrada {
     private String ingles;
     private boolean esPalabra;
     private String sonido;
-    private Date fechaDeIntroduccion;
-    private Date ultimoTestRealizado;
+    private LocalDateTime fechaDeIntroduccion;
+    private LocalDateTime ultimoTestRealizado;
     private int numeroDeAciertos;
 
-    public Entrada(String espanol, String ingles, boolean esPalabra, String sonido, Date fechaDeIntroduccion, Date ultimoTestRealizado, int numeroDeAciertos) {
+    public Entrada(String espanol, String ingles, boolean esPalabra, String sonido, LocalDateTime ultimoTestRealizado, int numeroDeAciertos) {
         this.espanol = espanol;
         this.ingles = ingles;
         this.esPalabra = esPalabra;
         this.sonido = sonido;
-        this.fechaDeIntroduccion = fechaDeIntroduccion;
+        this.fechaDeIntroduccion = LocalDateTime.now();
         this.ultimoTestRealizado = ultimoTestRealizado;
         this.numeroDeAciertos = numeroDeAciertos;
     }
@@ -54,19 +54,19 @@ public class Entrada {
         this.sonido = sonido;
     }
 
-    public Date getFechaDeIntroduccion() {
+    public LocalDateTime getFechaDeIntroduccion() {
         return fechaDeIntroduccion;
     }
 
-    public void setFechaDeIntroduccion(Date fechaDeIntroduccion) {
+    public void setFechaDeIntroduccion(LocalDateTime fechaDeIntroduccion) {
         this.fechaDeIntroduccion = fechaDeIntroduccion;
     }
 
-    public Date getUltimoTestRealizado() {
+    public LocalDateTime getUltimoTestRealizado() {
         return ultimoTestRealizado;
     }
 
-    public void setUltimoTestRealizado(Date ultimoTestRealizado) {
+    public void setUltimoTestRealizado(LocalDateTime ultimoTestRealizado) {
         this.ultimoTestRealizado = ultimoTestRealizado;
     }
 
@@ -76,5 +76,18 @@ public class Entrada {
 
     public void setNumeroDeAciertos(int numeroDeAciertos) {
         this.numeroDeAciertos = numeroDeAciertos;
+    }
+
+    @Override
+    public String toString() {
+        return "Entrada{" +
+                "espanol='" + espanol + '\'' +
+                ", ingles='" + ingles + '\'' +
+                ", esPalabra=" + esPalabra +
+                ", sonido='" + sonido + '\'' +
+                ", fechaDeIntroduccion=" + fechaDeIntroduccion +
+                ", ultimoTestRealizado=" + ultimoTestRealizado +
+                ", numeroDeAciertos=" + numeroDeAciertos +
+                '}';
     }
 }
