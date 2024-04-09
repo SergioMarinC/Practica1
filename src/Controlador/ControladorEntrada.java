@@ -18,4 +18,10 @@ public class ControladorEntrada {
         entradas.add(nuevaEntrada);
         daoEntrada.setEntradas(entradas);
     }
+
+    public static void eliminarEntrada(Entrada entrada){
+        ArrayList<Entrada> entradas = daoEntrada.getEntradas();
+        entradas.remove(entrada);
+        daoEntrada.setEntradas(entradas);
+    }
 }

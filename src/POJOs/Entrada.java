@@ -12,13 +12,13 @@ public class Entrada {
     private LocalDateTime ultimoTestRealizado;
     private int numeroDeAciertos;
 
-    public Entrada(String espanol, String ingles, boolean esPalabra, String sonido, LocalDateTime ultimoTestRealizado, int numeroDeAciertos) {
+    public Entrada(String espanol, String ingles, boolean esPalabra, String sonido, int numeroDeAciertos) {
         this.espanol = espanol;
         this.ingles = ingles;
         this.esPalabra = esPalabra;
         this.sonido = sonido;
         this.fechaDeIntroduccion = LocalDateTime.now();
-        this.ultimoTestRealizado = ultimoTestRealizado;
+        this.ultimoTestRealizado = null;
         this.numeroDeAciertos = numeroDeAciertos;
     }
 
