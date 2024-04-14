@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class IntroducirModificar extends JFrame {
@@ -29,7 +28,7 @@ public class IntroducirModificar extends JFrame {
         setSize(300,200);
         setVisible(true);
 
-        //Tabla
+        //Tabla recorre array con nombres
         DefaultTableModel modelo = new DefaultTableModel();
         for (String e : nombreColumnas) {
             modelo.addColumn(e);
@@ -60,6 +59,7 @@ public class IntroducirModificar extends JFrame {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Si no se marca, la fila será -1
                 int filaSeleccionada = table1.getSelectedRow();
                 if (filaSeleccionada != -1) {
                     int opcion = JOptionPane.showConfirmDialog(IntroducirModificar.this, "¿Estás seguro de que deseas eliminar esta entrada?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
@@ -82,6 +82,7 @@ public class IntroducirModificar extends JFrame {
         DefaultTableModel modelo = (DefaultTableModel) table1.getModel();
         modelo.setRowCount(0);
 
+        //Llama al coontroaldor, obtiene todas las entradas y las recorre
         for (Entrada entrada: ControladorEntrada.obtenerEntradas()) {
             Object[] fila = {
                     entrada.getEspanol(),
